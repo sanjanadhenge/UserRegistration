@@ -35,9 +35,7 @@ namespace UserRegistration
                         user.ValidateMobile(Number);
                         break;
                     case 4:
-                        Console.WriteLine("Enter Mail ID");
-                        string Mail = Console.ReadLine();
-                        user.ValidateMailID(Mail);
+                        user.ValidateMailID();
                         break;
                     case 5:
                         Console.WriteLine("Enter Password");
