@@ -11,6 +11,7 @@ namespace UserRegistration
     {
         public static string NAME_REGX = "^[A-Z]{1}[a-z]{2,}$";
         public static string MOBILENUMBER = "^[6-9]{1}[0-9]{9}$";
+        public static string Mail_ID = "^[0-9a-zA-Z]+[.+_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z][.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
         public void ValidateFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, NAME_REGX))
@@ -37,6 +38,17 @@ namespace UserRegistration
         public void ValidateMobile(string Mobile)
         {
             if (Regex.IsMatch((string)Mobile, MOBILENUMBER))
+            {
+                Console.WriteLine("Valid");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+        }
+        public void ValidateMailID(string Mail)
+        {
+            if (Regex.IsMatch((string)Mail, MOBILENUMBER))
             {
                 Console.WriteLine("Valid");
             }

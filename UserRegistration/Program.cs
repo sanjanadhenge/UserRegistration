@@ -15,7 +15,7 @@ namespace UserRegistration
             bool flag = true;
             while(flag)
             {
-                Console.WriteLine("Select option \n 1. First Name \n 2.Last Name \n 3.Mobile Number \n 4.Exit");
+                Console.WriteLine("Select option \n 1. First Name \n 2.Last Name \n 3.Mobile Number \n 4.Mail ID \n 5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -35,6 +35,11 @@ namespace UserRegistration
                         user.ValidateMobile(Number);
                         break;
                     case 4:
+                        Console.WriteLine("Enter Mail ID");
+                        string Mail = Console.ReadLine();
+                        user.ValidateMailID(Mail);
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
