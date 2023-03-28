@@ -25,6 +25,11 @@ namespace UserRegistration
                         user.ValidateFirstName(first);
                         break;
                     case 2:
+                        Console.WriteLine("Enter Last Name");
+                        string last = Console.ReadLine();
+                        user.ValidateLastName(last);
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }

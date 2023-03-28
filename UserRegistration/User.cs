@@ -22,5 +22,16 @@ namespace UserRegistration
             }
 
         }
+        public void ValidateLastName(string firstName)
+        {
+            if (Regex.IsMatch(firstName, NAME_REGX))
+            {
+                Console.WriteLine("Valid last name");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+        }
     }
 }
