@@ -15,7 +15,7 @@ namespace UserRegistration
             bool flag = true;
             while(flag)
             {
-                Console.WriteLine("Select option \n 1. First Name \n 2.Last Name \n 3.Mobile Number \n 4.Mail ID \n 5.Exit");
+                Console.WriteLine("Select option \n 1. First Name \n 2.Last Name \n 3.Mobile Number \n 4.Mail ID \n 5.PassWord \n 6.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -40,6 +40,11 @@ namespace UserRegistration
                         user.ValidateMailID(Mail);
                         break;
                     case 5:
+                        Console.WriteLine("Enter Password");
+                        string pass = Console.ReadLine();
+                        user.ValidatePass(pass);
+                        break;
+                    case 6:
                         flag = false;
                         break;
                 }
