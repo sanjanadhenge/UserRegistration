@@ -11,61 +11,97 @@ namespace UserMethod
         // public static string Mail_ID = "^[a-zA-Z]+[.+_]{1}[a-zA-Z]";
         public string ValidateFirstName(string firstName)
         {
-            if (Regex.IsMatch(firstName, NAME_REGX))
+            try
             {
-                return "valid";
+
+                if (Regex.IsMatch(firstName, NAME_REGX))
+                {
+                    return "valid";
+                }
+
             }
-            else
+            catch (Exception)
             {
-                return "Invalid";
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID, "Invalid");
             }
+
+            return "";
+            
 
         }
         public string ValidateLastName(string lastName)
         {
-            if (Regex.IsMatch(lastName, NAME_REGX))
+            try
             {
-                return "valid";
+
+                if (Regex.IsMatch(lastName, NAME_REGX))
+                {
+                    return "valid";
+                }
+
             }
-            else
+            catch (Exception)
             {
-                return "Invalid";
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID, "Invalid");
             }
+
+            return "";
         }
         public string ValidateMailID(string mail)
         {
-            if (Regex.IsMatch((string)mail, Mail_ID))
+            try
             {
-                return "valid";
+
+                if (Regex.IsMatch(mail, Mail_ID))
+                {
+                    return "valid";
+                }
+
             }
-            else
+            catch (Exception)
             {
-                return "Invalid";
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID, "Invalid");
             }
+
+            return "";
 
         }
 
         public string ValidateMobile(string Mobile)
         {
-            if (Regex.IsMatch((string)Mobile, MOBILENUMBER))
+            try
             {
-                return "valid";
+
+                if (Regex.IsMatch(Mobile, MOBILENUMBER))
+                {
+                    return "valid";
+                }
+
             }
-            else
+            catch (Exception)
             {
-                return "Invalid";
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID, "Invalid");
             }
+
+            return "";
         }
         public string ValidatePass(string Pass)
         {
-            if (Regex.IsMatch((string)Pass, Password))
+            try
             {
-                return "valid";
+
+                if (Regex.IsMatch(Pass, Password))
+                {
+                    return "valid";
+                }
+
             }
-            else
+            catch (Exception)
             {
-                return "Invalid";
+                throw new CustomExceptions(CustomExceptions.ExceptionType.INVALID, "Invalid");
             }
+
+            return "";
         }
         public string ValidateMailIDArray(string[] arr)
         {

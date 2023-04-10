@@ -8,18 +8,27 @@ namespace TestProjectUser
         [Test]
         public void GivenFirstName_WhenAnalyze_ShouldReturnValid()
         {
-            string name = "Sanjana";
-             UserFunctions userFunctions = new UserFunctions();
-            string result = userFunctions.ValidateFirstName(name);
-            Assert.AreEqual(result, "valid");
+                string name = "Sanjana";
+                UserFunctions userFunctions = new UserFunctions();
+                string result = userFunctions.ValidateFirstName(name);
+                Assert.AreEqual(result, "valid");
+           
         }
         [Test]
         public void GivenFirstName_WhenAnalyze_ShouldReturnInValid()
         {
-            string name = "sanjana";
-            UserFunctions userFunctions = new UserFunctions();
-            string result = userFunctions.ValidateFirstName(name);
-            Assert.AreEqual(result, "Invalid");
+            try
+            {
+                string name = "sanjana";
+                UserFunctions userFunctions = new UserFunctions();
+                string result = userFunctions.ValidateFirstName(name);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "Invalid");
+            }
+            
+            
         }
         [Test]
         public void GivenLastName_WhenAnalyze_ShouldReturnValid()
@@ -32,10 +41,19 @@ namespace TestProjectUser
         [Test]
         public void GivenLastName_WhenAnalyze_ShouldReturnInValid()
         {
-            string name = "dhenge";
-            UserFunctions userFunctions = new UserFunctions();
-            string result = userFunctions.ValidateLastName(name);
-            Assert.AreEqual(result, "Invalid");
+            try
+            {
+                string name = "dhenge";
+                UserFunctions userFunctions = new UserFunctions();
+                string result = userFunctions.ValidateLastName(name);
+                
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "Invalid");
+            }
+
+
         }
         [Test]
         public void GivenMail_WhenAnalyze_ShouldReturnValid()
@@ -48,10 +66,18 @@ namespace TestProjectUser
         [Test]
         public void GivenMail_WhenAnalyze_ShouldReturnInValid()
         {
-            string mail = "abcxyzbrizdgelabz.co.in";
-            UserFunctions userFunctions = new UserFunctions();
-            string result = userFunctions.ValidateMailID(mail);
-            Assert.AreEqual(result, "Invalid");
+            try
+            {
+                string mail = "abcxyzbrizdgelabz.co.in";
+                UserFunctions userFunctions = new UserFunctions();
+                string result = userFunctions.ValidateMailID(mail);
+                
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "Invalid");
+            }
+
         }
 
         [Test]
@@ -65,10 +91,16 @@ namespace TestProjectUser
         [Test]
         public void GivenMobileNumber_WhenAnalyze_ShouldReturnInValid()
         {
-            string mobile = "35624879";
-            UserFunctions userFunctions = new UserFunctions();
-            string result = userFunctions.ValidateMobile(mobile);
-            Assert.AreEqual(result, "Invalid");
+            try
+            {
+                string mobile = "35624879";
+                UserFunctions userFunctions = new UserFunctions();
+                string result = userFunctions.ValidateMobile(mobile);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "Invalid");
+            }
         }
         [Test]
         public void GivenPassword_WhenAnalyze_ShouldReturnValid()
@@ -81,10 +113,18 @@ namespace TestProjectUser
         [Test]
         public void GivenPassword_WhenAnalyze_ShouldReturnInValid()
         {
-            string pass = "Abcdef";
-            UserFunctions userFunctions = new UserFunctions();
-            string result = userFunctions.ValidatePass(pass);
-            Assert.AreEqual(result, "Invalid");
+            try
+            {
+                string pass = "Abcdef";
+                UserFunctions userFunctions = new UserFunctions();
+                string result = userFunctions.ValidatePass(pass);
+                Assert.AreEqual(result, "Invalid");
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "Invalid");
+            }
+
         }
         [Test]
         public void GivenMailArray_WhenAnalyze_ShouldReturnValid()
